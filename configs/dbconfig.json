@@ -1,0 +1,21 @@
+{
+  "production":{
+    "username": "loadtest",
+    "password": "7Mo8Fq1NcR",
+    "database": "loadtest",
+    "host": "127.0.0.1"
+    , "port":"3306"
+    , "dialect": "mariadb","logging":false, "timezone": "Etc/GMT-9"
+    ,"pool": {"max": 12800,"min": 0,"idle": 10000}
+  }
+    ,"development": {
+      "username": "loadtest",
+      "password": "7Mo8Fq1NcR",
+      "database": "loadtest",
+      "host": "127.0.0.1"
+      , "port":"3306"
+      , "dialect": "mariadb","logging":false, "timezone": "Etc/GMT-9"
+      ,"pool": {"max": 12800,"min": 0,"idle": 10000}
+    }   
+}
+
