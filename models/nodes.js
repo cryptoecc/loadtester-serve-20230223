@@ -41,6 +41,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BIGINT,
       allowNull: true,
       defaultValue: 0
+    },
+    port: {
+      type: DataTypes.STRING(10),
+      allowNull: true
+    },
+    name: {
+      type: DataTypes.STRING(100),
+      allowNull: true
     }
   }, {
     sequelize,

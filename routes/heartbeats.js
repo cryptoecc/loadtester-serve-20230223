@@ -13,7 +13,9 @@ router.all( '/' , async (req,res)=>{
 	const curtimeunix = curtime.unix()
 	let respfind =  await db[ 'nodes'].findOne ( {raw: true , where : { ipaddress } } )
 	if ( respfind ) {
-		await db[ 'nodes' ].update ( { lastaliveunix : curtimeunix 
+		await db[ 'nodes' ].update ( { 
+				lastaliveunix : curtimeunix 
+			, lastalive : curtime.format ( 'YYYY-MM-DDTHH:mm:ss' ) 
 			, cumulcount : 1 + respfind.cumulcount
 		} , {where : { id: respfind.id  } }  )
 	} else { 

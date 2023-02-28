@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
+const queriesrouter = require( './routes/queries' )
 const transactionsrouter = require( './routes/transactions' )
 const heartbeatsrouter = require ( './routes/heartbeats' )
 var app = express();
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 // app.use('/users', usersRouter);
+app.use ( '/queries' , queriesrouter ) 
 app.use ( '/transactions' , transactionsrouter ) 
 app.use ( '/heartbeats' , heartbeatsrouter ) 
 // catch 404 and forward to error handler
@@ -43,8 +45,8 @@ app.use(function(err, req, res, next) {
 });
 const LOGGER=console.log
 const moment=require('moment')
-LOGGER( `starting app` )
+LOGGER( `starting app` , '@loadtest/3.39.197.118:34815' )
 setInterval ( _=>{
-	LOGGER( moment().format('HH:mm:ss, YYYYY-MM-DD' ) , '@loadtest')
+	LOGGER( moment().format('HH:mm:ss, YYYYY-MM-DD' ) , '@loadtest/3.39.197.118:34815')
 } ,  60*1000 )
 module.exports = app;
